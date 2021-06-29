@@ -2,7 +2,7 @@
 ## 概要
 - 使用言語: HTML, JavaScript
 - Web上で動作するTo Do Listです
-- JavaScriptの練習で作りました
+- JavaScriptの練習で作ったのでUIは...です
 ## できること
 - テキスト入力を利用したTaskの入力、削除が可能です
 - 保存・編集・書き出しは（まだ）実装していません
