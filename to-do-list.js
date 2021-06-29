@@ -12,9 +12,9 @@ function addTask() {
         // element1にtextboxの内容をコピー
         outputElement1.textContent = "- " + input.value;
         // element2のinputがbuttonであることを定義
-        outputElement2.setAttribute("type", "button");
-        outputElement2.setAttribute("value", "Remove");
-        outputElement2.setAttribute("id", "removeButton");
+        outputElement2.type = "button";
+        outputElement2.value = "Remove";
+        outputElement2.id = "removeButton";
         // elementを置く場所（output）を指定し、引数にelementを入れる
         output.appendChild(outputElement1);
         output.appendChild(outputElement2);
