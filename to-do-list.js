@@ -1,38 +1,36 @@
-const output = document.getElementById("outputText");
 const input = document.getElementById("inputText");
+const output = document.getElementById("outputText");
 
-function addTask() {
+// task addition
+const addButton = document.getElementById("addButton");
+addButton.addEventListener("click", function() {
     if(input.value === ""){ // textboxが空欄の時、追加せずにalertを表示
         alert("Task is empty. Please fill in the blank.");
     }
     else{
         // elementをつくる/elementの中身を記述
-        const outputElement1 = document.createElement("p");
-        const outputElement2 = document.createElement("input");
+        const outputP = document.createElement("p");
         // element1にtextboxの内容をコピー
-        outputElement1.textContent = "- " + input.value;
-        // element2のinputがbuttonであることを定義
-        outputElement2.type = "button";
-        outputElement2.value = "Remove";
-        outputElement2.id = "removeButton";
+        outputP.textContent = "- " + input.value;
         // elementを置く場所（output）を指定し、引数にelementを入れる
-        output.appendChild(outputElement1);
-        output.appendChild(outputElement2);
+        output.appendChild(outputP);
         // addButtonを押した後にtextboxを空にする
         input.value = "";
+
+        // task delete
+        const deleteButton = document.createElement("input");
+        deleteButton.type = "button";
+        deleteButton.value = "Delete";
+        outputP.appendChild(deleteButton);
+        deleteButton.addEventListener("click", function() {
+            outputP.remove();
+        })
     }
-}
-
-// task addition
-const button1 = document.getElementById("addButton");
-button1.addEventListener("click", addTask);
-
-// task delete
-const button2 = document.getElementById("deleteButton");
-
+});
 
 // task all delete
-function deleteTask() {
+const button3 = document.getElementById("deleteAllButton");
+button3.addEventListener("click", function() {
     if(output.textContent === ""){ // Listに何もない時、alertを表示
         alert("The list is empty.");
     }
@@ -41,6 +39,4 @@ function deleteTask() {
             output.textContent = "";
         }
     }
-}
-const button3 = document.getElementById("deleteAllButton");
-button3.addEventListener("click", deleteTask);
+});
